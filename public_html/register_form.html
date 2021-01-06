@@ -1,0 +1,54 @@
+
+<!-- 회원가입 페이지 -->
+
+<?php
+error_reporting(~E_NOTICE);  ini_set("display_errors", 1);  session_start();
+?>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<html>
+<head>
+<title>회원가입</title>
+</head>
+<body>
+<!--/* 사이트 이름과 메뉴 바, 로그인,회원가입... 등 페이지 상단의 기본 형태*/-->
+  <p align="right"><a href="./login_form.html">로그인</a>
+  <a href="./logout.php">로그아웃</a>
+  <a href="./register_form.html">회원가입</a></p>
+  <CENTER><h2> 표준 체중을 향한 건강관리 프로그램 </h2>
+    <table align="center" width= "800" border="1" cellspacing="0" cellpadding="5">
+      <tr align="center">
+        <td colspan="5" bgcolor="#ffffff"><?=$_SESSION['user_name']?>(<?=$_SESSION['user_id']?>)님 환영합니다.</td>
+      </tr>
+      <tr align="center">
+        <td bgcolor="#ddffdd"><a href="./main.php">HOME</td>
+        <td bgcolor="#ddffdd"><a href="./exercise.php">운동량계산</td>
+        <td bgcolor="#ddffdd"><a href="./course.php">칼로리계산</td>
+        <td bgcolor="#ddffdd"><a href="./board.php">자유 후기</td>
+        <td bgcolor="#ddffdd"><a href="./mypage.php">Mypage</td>
+      </tr>
+    </table>
+  <br/>
+
+<!-- 회원가입 폼 -->
+  <form action='./register.php' name='register' method='post'>
+<br>
+<br>
+<CENTER>회원가입</b></div><br>
+<label>아이디 : </label><input type="text" name="id" class="box"/><br>
+<label>비밀번호 : </label><input type="password" name="pwd" class="box"/><br>
+<label>이름 : </label><input type="text" name="name" class="box"/><br>
+<label>나이 : </label><input type="text" name="age" class="box"/><br>
+<label>성별 : </label><input type="radio" name="gender" value="male"/>남자
+<input type="radio" name="gender" value="female"/>여자<br>
+<label>키 : </label><input type="text" name="height" class="box"/><br>
+<label>몸무게 : </label><input type="text" name="weight" class="box"/><br>
+<label>활동량 : </label><input type="radio" name="act" value="0"/>보통
+<input type="radio" name="act" value="1"/>적음
+<input type="radio" name="act" value="2"/>많음<br>
+
+<center><input type="submit" value="회원가입"/><br />
+</form>
+
+</body>
+</html>
